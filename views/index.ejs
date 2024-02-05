@@ -28,6 +28,22 @@
     <form action="/todos/clear-completed" method="post">
       <button type="submit">Clear All Completed</button>
     </form>
+    <script>
+      const deleteTodo = async (todoId) => {
+        try {
+          const response = await fetch(`/todos/${todoId}/delete`, {
+            method: 'DELETE'
+          });
     
+          if (response.ok) {
+            location.reload(); // Refresh the page after successful deletion
+          } else {
+            console.error('Error deleting todo');
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    </script>
   </body>
 </html>
