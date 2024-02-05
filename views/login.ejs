@@ -1,13 +1,16 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
   </head>
-  <body>
-    <h1>Login</h1>
-    <form action="/login" method="post">
+  <body class="gray">
+    <h1>Welcome to the Todlist app </h1>
+    <h2>Login</h2>
+    <form action="/login" method="post" class="form">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Login</button>
+      <button type="submit" class="login-button">Login</button>
     </form>
     <p>Don't have an account? <a href="/register">Register</a></p>
   </body>

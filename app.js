@@ -8,6 +8,7 @@ const app = express();
 const crypto = require('crypto');
 const secretKey = crypto.randomBytes(32).toString('hex');//to generate the secret key
 
+app.use('/styles', express.static('styles'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
