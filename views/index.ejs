@@ -1,34 +1,34 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
   </head>
-  <body class="gray">
-     <a href="/logout">Log out</a>
+  <body class="indexgray">
+    <a href="/logout" class="logout-link">Log out</a>
     <h1>Todo List</h1>
-    <form action="/todos" method="post">
+    <form action="/todos" method="post" class="todo-form">
       <input type="text" name="content" placeholder="New Todo" required>
-      <button type="submit">Add</button>
+      <button type="submit" class="add-button">Add</button>
     </form>
-    <ul>
+    <ul class="todo-list">
       <% todos.forEach(todo => { %>
-        <li>
+        <li class="todo-item">
           <%= todo.content %>
           <% if (todo.completed) { %>
-            <span style="color: green;">(Completed)</span>
+            <span class="completed"> (Completed)</span>
           <% } else { %>
             <form action="/todos/<%= todo.id %>/complete" method="post">
               <input type="hidden" name="completed" value="true">
-              <button type="submit">Complete</button>
+              <button type="submit" class="complete-button">Complete</button>
             </form>
           <% } %>
-          <a href="#" onclick="deleteTodo('<%= todo.id %>'); return false;">Delete</a>
-
+          <a href="#" onclick="deleteTodo('<%= todo.id %>'); return false;" class="delete-link">Delete</a>
         </li>
       <% }) %>
     </ul>
-    <form action="/todos/clear-completed" method="post">
-      <button type="submit">Clear All Completed</button>
+    <form action="/todos/clear-completed" method="post" class="clearall">
+      <button type="submit" class="clear-button">Clear All Completed</button>
     </form>
     <script>
       const deleteTodo = async (todoId) => {
