@@ -1,0 +1,163 @@
+body.gray {
+    background-image: linear-gradient(to bottom, #6c5ce7, #825ee3, #9f61df, #bd64db, #db67d7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 90vh;
+ 
+    /* background-color: #877cd4; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body.indexgray{
+    background-image: linear-gradient(to bottom, #6c5ce7, #825ee3, #9f61df, #bd64db, #db67d7);
+    
+     height: 90vh;
+  }
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  .form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .form input[type="text"],
+  .form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #341f97;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #6f42c1;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  p a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .logout-link {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  .todo-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .todo-form input[type="text"] {
+    width: 28%;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  .clearall{
+    display: flex;
+    justify-content: center;
+  }
+  .add-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #341f97;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #6f42c1;
+  }
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .completed {
+    color: green;
+  }
+  
+  .complete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #341f97;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .complete-button:hover {
+    background-color: #6f42c1;
+  }
+  
+  .delete-link {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .clear-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #341f97;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .clear-button:hover {
+    background-color: #6f42c1;
+  }

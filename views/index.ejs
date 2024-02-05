@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+  </head>
+  <body class="indexgray">
+    <a href="/logout" class="logout-link">Log out</a>
+    <h1>Todo List</h1>
+    <form action="/todos" method="post" class="todo-form">
+      <input type="text" name="content" placeholder="New Todo" required>
+      <button type="submit" class="add-button">Add</button>
+    </form>
+    <ul class="todo-list">
+      <% todos.forEach(todo => { %>
+        <li class="todo-item">
+          <%= todo.content %>
+          <% if (todo.completed) { %>
+            <span class="completed"> (Completed)</span>
+          <% } else { %>
+            <form action="/todos/<%= todo.id %>/complete" method="post">
+              <input type="hidden" name="completed" value="true">
+              <button type="submit" class="complete-button">Complete</button>
+            </form>
+          <% } %>
+          <a href="#" onclick="deleteTodo('<%= todo.id %>'); return false;" class="delete-link">Delete</a>
+        </li>
+      <% }) %>
+    </ul>
+    <form action="/todos/clear-completed" method="post" class="clearall">
+      <button type="submit" class="clear-button">Clear All Completed</button>
+    </form>
+    <script>
+      const deleteTodo = async (todoId) => {
+        try {
+          const response = await fetch(`/todos/${todoId}/delete`, {
+            method: 'DELETE'
+          });
+    
+          if (response.ok) {
+            location.reload(); // Refresh the page after successful deletion
+          } else {
+            console.error('Error deleting todo');
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    </script>
+  </body>
+</html>
