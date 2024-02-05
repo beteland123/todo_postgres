@@ -56,10 +56,27 @@
 
 ### Prerequisites
 > In order to run this project you need: To have a code edtitor like visual strudio, download git control system,download node  
-```pre
-Example command: npm install to install dependent package
-               
- ```
+
+- [] install Node.js:
+
+Visit the official Node.js website at https://nodejs.org/.
+Download the appropriate installer for your operating system.
+Run the installer and follow the installation instructions.
+After the installation is complete, open a new command prompt or terminal window and verify that Node.js is installed by running the following command:
+
+  ```node -v```
+You should see the version number of Node.js displayed if it is installed correctly.
+
+- [] Install PostgreSQL:
+
+Visit the official PostgreSQL website at https://www.postgresql.org/.
+Download the appropriate installer for your operating system.
+Run the installer and follow the installation instructions.
+During the installation, you will be prompted to set a password for the default PostgreSQL user (usually "postgres"). Make sure to remember this password.
+After the installation is complete, open a new command prompt or terminal window and verify that PostgreSQL is installed by running the following command:
+```
+psql --version
+``
 ### Setup
 Clone this repository to your desired folder:
 ```setup
