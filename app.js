@@ -26,6 +26,17 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.post('/todos', async (req, res) => {
+  const { content } = req.body;
+  try {
+    await db.query('INSERT INTO todo (content, completed) VALUES ($1, $2)', [content, false]);
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error creating todo');
+  }
+});
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
