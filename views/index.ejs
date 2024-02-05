@@ -8,6 +8,23 @@
       <input type="text" name="content" placeholder="New Todo" required>
       <button type="submit">Add</button>
     </form>
+    <ul>
+      <% todos.forEach(todo => { %>
+        <li>
+          <%= todo.content %>
+          <% if (todo.completed) { %>
+            <span style="color: green;">(Completed)</span>
+          <% } else { %>
+            <form action="/todos/<%= todo.id %>/complete" method="post">
+              <input type="hidden" name="completed" value="true">
+              <button type="submit">Complete</button>
+            </form>
+          <% } %>
+          <a href="#" onclick="deleteTodo('<%= todo.id %>'); return false;">Delete</a>
+
+        </li>
+      <% }) %>
+    </ul>
    
   </body>
 </html>
