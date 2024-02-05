@@ -48,6 +48,18 @@ app.delete('/todos/:id/delete', async (req, res) => {
   }
 });
 
+app.post('/todos/:id/complete', async (req, res) => {
+  const todoId = req.params.id;
+  const completed = req.body.completed;
+  try {
+    await db.query('UPDATE todo SET completed = $1 WHERE id = $2', [completed, todoId]);
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error updating todo');
+  }
+});
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
