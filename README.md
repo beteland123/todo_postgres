@@ -36,20 +36,27 @@
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
-    <li><a href=" https://nodejs.org/">Node.js</a></li>
-    <li><a href="  https://expressjs.com/">Express.js</a></li>
-    <li><a href=" https://ejs.co/">EJS (Embedded JavaScript)</a></li>
-    <li><a href=" https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://nodejs.org/">Node.js</a></li>
+    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://ejs.co/">EJS (Embedded JavaScript)</a></li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 ### Key Features <a name="key-features"></a>
  
-- [ ]**[use a postgress as databse]**
-- [ ]**[todo list app where you can add task, make it compelted, clear all competed and delete task]**
-- [ ]**[uses node as server side and express for ]**
+- [ ]**[use a postgress as database, node express for server ]**
+- [ ]**[Add Task: Users can add tasks to the to-do list. This feature allows users to enter a task description and add it to their list.]**
+- [ ]**[Mark as Completed: Users can mark tasks as completed. This feature allows users to indicate that a specific task has been finished or completed. ]**
+-  [ ]**Clear All Completed: Users can clear all completed tasks from the list. This feature provides a convenient way for users to remove all the completed tasks at once.]**
+-  [ ]**[Delete Task: Users can delete individual tasks from the list. This feature allows users to remove tasks that are no longer needed or relevant.]**
+ -  [ ]**[Create a registration form where users can sign up by providing a  username and a password. ]**
+ - [ ]**[Use a hashing algorithm like bcrypt to securely hash the user's passwords during registration and login.]**
+ - [ ]**[Compare the hashed password during authentication instead of storing or transmitting the actual password.]**
+ - [ ]**[Link each to-do list with the authenticated user's account. When adding tasks, associate them with the user who created them. ]**
+
 ## :rocket: Live Demo <a name="live-demo"> comming soon</a>
 
-[here](https://beteland123.github.io/Todo-list/)
+[here]()
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :computer: Getting Started <a name="getting-started"></a>
