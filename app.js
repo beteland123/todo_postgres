@@ -16,6 +16,16 @@ const db = new pg.Pool({
   port: 5432
 });
 
+app.get('/', async (req, res) => {
+  try {
+    const results = await db.query('SELECT * FROM todo');
+    res.render('index', { todos: results.rows });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving todos');
+  }
+});
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
