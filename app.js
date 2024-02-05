@@ -60,7 +60,15 @@ app.post('/todos/:id/complete', async (req, res) => {
   }
 });
 
-
+app.post('/todos/clear-completed', async(re,res)=>{
+  try{
+    await db.query('DELETE FROM todo WHERE completed = true');
+    res.redirect('/')
+  } catch (error){
+    console.error(error)
+    res.status(500).send('Error to delete all')
+  }
+});
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
