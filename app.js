@@ -7,20 +7,63 @@ const ejs = require('ejs');
 const app = express();
 const crypto = require('crypto');
 const secretKey = crypto.randomBytes(32).toString('hex');//to generate the secret key
+const { Pool } = require('pg');
 
 app.use('/styles', express.static('styles'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const db = new pg.Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'todlist',
-  password: 'menbeg242316',
-  port: 5432
+const connectionString = 'postgres://xxsmgbla:zY-gUtzl6pm6ZwOdIcAJNeN6-bcVLTaI@tai.db.elephantsql.com/xxsmgbla';
+
+const db = new Pool({
+  connectionString: connectionString,
 });
 
+db.connect((err, client, done) => {
+  if (err) {
+    console.error('Error connecting to the database', err);
+  } else {
+    console.log('Connected to the database');
+  }
+});
+db.query(`
+  CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+  )
+`, (err, result) => {
+  if (err) {
+    console.error('Error creating the users table', err);
+  } else {
+    console.log('Users table created successfully');
+  }
+});
+db.query(`
+  CREATE TABLE IF NOT EXISTS todo (
+    id SERIAL PRIMARY KEY,
+    content TEXT,
+    completed BOOLEAN
+    
+  )
+`, (err, result) => {
+  if (err) {
+    console.error('Error creating the todo table', err);
+  } else {
+    console.log('Todod table created successfully');
+  }
+});
+db.query(`
+  ALTER TABLE IF EXISTS todo
+  ADD COLUMN IF NOT EXISTS user_id INT REFERENCES users (id)
+`, (err, result) => {
+  if (err) {
+    console.error('Error adding user_id column as a foreign key', err);
+  } else {
+    console.log('user_id column added as a foreign key successfully');
+  }
+});
 app.use(session({
   secret: secretKey,
   resave: false,
