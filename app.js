@@ -37,6 +37,17 @@ app.post('/todos', async (req, res) => {
   }
 });
 
+app.delete('/todos/:id/delete', async (req, res) => {
+  const todoId = req.params.id;
+  try {
+    await db.query('DELETE FROM todo WHERE id = $1', [todoId]);
+    res.sendStatus(200);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error deleting todo');
+  }
+});
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
