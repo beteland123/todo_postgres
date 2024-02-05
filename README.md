@@ -15,7 +15,7 @@
 - [:pray: Acknowledgements](#acknowledgements)
 - [:memo: License](#license)
 # :book: [My-todo list] <a name="about-project"></a>
-> This project is called To do list which is developed to allow use to add thier todos , enale them to to CRUD on action on the task.
+> This project is called To-do List, which is developed to allow users to add their tasks and perform CRUD (Create, Read, Update, Delete) actions on the tasks.This project is built using Node.js and Express as the server-side framework, along with HTML, CSS, and JavaScript on the client-side. It also utilizes PostgreSQL as the database.
 ## :hammer_and_wrench: Built With <a name="built-with"> using Html and CSS</a>
 ### Tech Stack <a name="tech-stack"></a>
 <details>
@@ -36,7 +36,10 @@
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
-    <li><a href="https://webpack.js.org/guides/getting-started/#basic-setup">Webpack</a></li>
+    <li><a href=" https://nodejs.org/">Node.js</a></li>
+    <li><a href="  https://expressjs.com/">Express.js</a></li>
+    <li><a href=" https://ejs.co/">EJS (Embedded JavaScript)</a></li>
+    <li><a href=" https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 ### Key Features <a name="key-features"></a>
@@ -52,17 +55,28 @@
 ## :computer: Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
-> In order to run this project you need: To have a code edtitor like visual strudio, download git control system,download node  and configure linter in your local computer
+> In order to run this project you need: To have a code edtitor like visual strudio, download git control system,download node  
 ```pre
 Example command: npm install to install dependent package
-               : npm install --save-dev hint@7.x to install webhint
-               :npm install -g lighthouse to install lighthouse
+               
  ```
 ### Setup
 Clone this repository to your desired folder:
 ```setup
 git clone https://github.com/beteland123/todo_postgres.git
   ```
+  ```Database Setup:
+
+Create a new PostgreSQL database using your preferred method (e.g., GUI tool like pgAdmin or command line).
+Make note of the database connection details (host, port, username, password, database name) for the next step.
+
+
+Configure Database Connection:
+
+Open the project in your code editor.
+Locate the configuration file, typically named config.js or similar.
+Update the file with your PostgreSQL database connection details.
+```
  ### Install
 ```install
 Install this project with:git and npm install
@@ -109,5 +123,5 @@ I would like to thank God
 
 ## :memo: License <a name="license"></a>
 
-This project is [MIT](https://github.com/beteland123/todo_postgres/blob/feature/todo_postgres-structure/LICENSE) licensed.
+This project is [MIT](https://github.com/beteland123/todo_postgres/blob/development/LICENSE) licensed.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
